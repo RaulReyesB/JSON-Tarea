@@ -9,8 +9,8 @@ const taskSchema = new Schema({
   category: String,
   priority: {
     type: String,
-    enum: ["low", "medium", "high"],
-    default: "medium"
+    enum: ["baja", "media", "alta"],
+    default: "media"
   },
   dueDate: Date,
   completed: {
