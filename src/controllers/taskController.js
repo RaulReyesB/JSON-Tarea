@@ -77,7 +77,7 @@ export const updateOne = (req, res) => {
   const taskId = req.params.taskId;
   const updatedData = req.body;
   console.log('Datos recibidos para la actualización:', updatedData); // Agregar este registro de depuración
-  console.log('Fecha recibida:', updatedData.dueDate); // Agregar este registro de depuración
+  console.log('¿Contiene la propiedad dueDate?', updatedData.hasOwnProperty('dueDate'));
   taskDao
     .updateOne(taskId, updatedData)
     .then((task) => {
