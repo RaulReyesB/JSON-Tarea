@@ -32,6 +32,7 @@ taskDao.insertOne = async (task) => {
 };
 
 taskDao.updateOne = async (taskId, task) => {
+    console.log("Datos recibidos para la actualización:", task); 
     return await Task.findByIdAndUpdate(taskId, task, { new: true });
 };
 
