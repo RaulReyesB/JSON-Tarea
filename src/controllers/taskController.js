@@ -74,8 +74,11 @@ export const insertOne = (req, res) => {
 };
 
 export const updateOne = (req, res) => {
+  const taskId = req.params.taskId;
+  const updatedData = req.body;
+  console.log('Datos recibidos para la actualización:', updatedData); // Agregar este registro de depuración
   taskDao
-    .updateOne(req.params.taskId, req.body)
+    .updateOne(taskId, updatedData)
     .then((task) => {
       !task
         ? res.json({
@@ -89,6 +92,7 @@ export const updateOne = (req, res) => {
       })
     );
 };
+
 
 export const deleteOne = (req, res) => {
   taskDao
