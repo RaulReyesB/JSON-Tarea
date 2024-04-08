@@ -32,7 +32,7 @@ taskDao.insertOne = async (task) => {
 };
 
 taskDao.updateOne = async (taskId, task) => {
-    return await Task.findByIdAndUpdate(taskId, task);
+    return await Task.findByIdAndUpdate(taskId, task, { new: true });
 };
 
 taskDao.deleteOne = async (taskId) => {
